@@ -1,5 +1,7 @@
 # mynodesql
 
+#View the live site at https://prof-mynodesql.herokuapp.com/
+
 #Routes: 
 #'/users' GET or DISPLAY customers
 #'/users/number' GET or DISPLAY a specific customers
