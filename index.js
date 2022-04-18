@@ -120,9 +120,9 @@ const app = express();
 
   //Create route to INSERT customer
   app.get('/adduser', (req,res) => {
-    let user = {Name: 'Mary Ekeh2', 
-                Email: 'maryekeh2@gmail.com',
-                Password: 'ekeh2',
+    let user = {Name: 'Mary Ekeh', 
+                Email: 'maryekeh@gmail.com',
+                Password: 'ekeh',
                 Balance: 2200 }  
 
     let sql = 'INSERT INTO customers SET ?';
