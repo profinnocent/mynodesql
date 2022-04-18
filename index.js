@@ -63,30 +63,29 @@ const app = express();
   app.get('/users', (req,res) => {
       let sql = 'SELECT * FROM customers'
 
-    //   dbconnection.query(sql, (err, results) => {
-    //       if(err){
-    //           throw err;
-    //       }else{
-    //           console.log(results);
-    //           res.send(results);
-    //       }
-    //   })
-    res.send("users page")
-  })
+      dbconnection.query(sql, (err, results) => {
+          if(err){
+              throw err;
+          }else{
+              console.log(results);
+              res.send(results);
+          }
+      })
+  });
 
   
   //Create route to GET or DISPLAY specific customer
   app.get('/users/:id', (req,res) => {
     let sql = `SELECT * FROM customers WHERE id = ${req.params.id}`;
 
-    // dbconnection.query(sql, (err, result) => {
-    //     if(err){
-    //         throw err;
-    //     }else{
-    //         console.log(result);
-    //         res.send('Data for user' + req.params.id + ' successfully read');
-    //     }
-    // })
+    dbconnection.query(sql, (err, result) => {
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+            res.send('Data for user' + req.params.id + ' successfully read');
+        }
+    })
 })
 
  //Create route to UPDATE a specific customer
@@ -94,28 +93,28 @@ const app = express();
     let newname = 'Mario Rodrigez'; 
     let sql = `UPDATE customers SET Name = '${newname}' WHERE id = ${req.params.id}`;
 
-    // let query = dbconnection.query(sql, (err, result) => {
-    //     if(err){
-    //         throw err;
-    //     }else{
-    //         console.log(result);
-    //         res.send(`User ${req.params.id} successfully updated`);
-    //     }
-    // })
+    let query = dbconnection.query(sql, (err, result) => {
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+            res.send(`User ${req.params.id} successfully updated`);
+        }
+    })
 })
 
  //Create route to DELETE a specific customer
  app.get('/deleteuser/:id', (req,res) => {
     let sql = `DELETE FROM customers WHERE id = ${req.params.id}`;
 
-    // let query = dbconnection.query(sql, (err, result) => {
-    //     if(err){
-    //         throw err;
-    //     }else{
-    //         console.log(result);
-    //         res.send(`User ${req.params.id} successfully deleted...`);
-    //     }
-    // })
+    let query = dbconnection.query(sql, (err, result) => {
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+            res.send(`User ${req.params.id} successfully deleted...`);
+        }
+    })
 })
 
 
@@ -128,14 +127,14 @@ const app = express();
 
     let sql = 'INSERT INTO customers SET ?';
 
-    // dbconnection.query(sql, user, (err, result) => {
-    //     if(err){
-    //         throw err;
-    //     }else{
-    //         console.log(result);
-    //         res.send('User successfully added');
-    //     }
-    // })
+    dbconnection.query(sql, user, (err, result) => {
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+            res.send('User successfully added');
+        }
+    })
 })
 
 
