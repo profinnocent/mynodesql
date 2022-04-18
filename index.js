@@ -4,29 +4,51 @@ const mysql = require('mysql');
 const app = express();
 
 //Create DB connection
-// var dbconnection = mysql.createConnection({
+ var dbconnection = mysql.createConnection({
 
 //     host     : 'localhost',
 //     user     : 'root',
 //     password : '',
 //     database : 'mynodesqldb'
     
-    /*
-    host     : 'pdb11.runhosting.com',
-    user     : '2107412_nodemysql',
-    password : 'nodemysql1920',
-    database : '2107412_nodemysql'
-    */
- // });
+    
+    host     : 'eu-cdbr-west-02.cleardb.net',
+    user     : 'bbeed19b5da297',
+    password : 'acc38556',
+    database : 'heroku_78aa321fdffc1fd'
+    
+  });
 
-//   dbconnection.connect((err) => {
-//       if(!err){
-//           console.log('Connection ok');
-//       }
-//       else{
-//           throw err;
-//       }
-//   });
+  dbconnection.connect((err) => {
+      if(!err){
+          console.log('Connection ok');
+      }
+      else{
+          throw err;
+      }
+  });
+
+
+   //Create customers table
+   app.get('/createtable', (req,res) => {
+    dbconnection.connect((err) => {
+        if (err) throw err;
+        console.log("Connected!");
+        //var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+        let sql = `CREATE TABLE customers (
+            ID INT(11) NOT NULL AUTO INCREMENT PRIMARY KEY,
+            NAME VARCHAR(50) NOT NULL,
+            EMAIL VARCHAR(50) NOT NULL,
+            PASSWORD VARCHAR(50) NOT NULL,
+            BALANCE INT(11) NOT NULL
+          )`;
+          dbconnection.query(sql, function (err, result) {
+          if (err) throw err;
+          console.log("Table created");
+        });
+      });
+})
+
 
     //Create Home page
     app.get('/', (req,res) => {
