@@ -36,7 +36,7 @@ const app = express();
     //     console.log("Connected!");
     //     //var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
 //         let sql = "CREATE TABLE customers (
-//             ID INT(11) NOT NULL AUTO INCREMENT PRIMARY KEY,
+//             ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 //             NAME VARCHAR(50) NOT NULL,
 //             EMAIL VARCHAR(50) NOT NULL,
 //             PASSWORD VARCHAR(50) NOT NULL,
@@ -120,10 +120,9 @@ const app = express();
 
   //Create route to INSERT customer
   app.get('/adduser', (req,res) => {
-    let user = {ID: 1,
-                Name: 'Mary Ekeh', 
-                Email: 'maryekeh@gmail.com',
-                Password: 'ekeh',
+    let user = {Name: 'Mary Ekeh2', 
+                Email: 'maryekeh2@gmail.com',
+                Password: 'ekeh2',
                 Balance: 2200 }  
 
     let sql = 'INSERT INTO customers SET ?';
