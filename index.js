@@ -45,6 +45,7 @@ const app = express();
           dbconnection.query(sql, function (err, result) {
           if (err) throw err;
           console.log("Table created");
+          res.send("table created...")
         });
       });
 })
