@@ -28,6 +28,14 @@ var dbconnection = mysql.createConnection({
       }
   });
 
+    //Create Home page
+    app.get('/', (req,res) => {
+  
+                console.log(res);
+                res.send("This is the Home Page");
+        });
+    
+
   //Create route to GET or DISPLAY customers
   app.get('/users', (req,res) => {
       let sql = 'SELECT * FROM customers'
@@ -52,7 +60,7 @@ var dbconnection = mysql.createConnection({
             throw err;
         }else{
             console.log(result);
-            res.send('Data successfully read');
+            res.send('Data for user' + req.params.id + ' successfully read');
         }
     })
 })
@@ -111,6 +119,7 @@ var dbconnection = mysql.createConnection({
 
 
 //Create and listen to server
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+let PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log("Server is running on portt " + PORT);
 });
