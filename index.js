@@ -120,7 +120,8 @@ const app = express();
 
   //Create route to INSERT customer
   app.get('/adduser', (req,res) => {
-    let user = {Name: 'Mary Ekeh', 
+    let user = {ID: 1,
+                Name: 'Mary Ekeh', 
                 Email: 'maryekeh@gmail.com',
                 Password: 'ekeh',
                 Balance: 2200 }  
