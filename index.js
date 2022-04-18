@@ -71,6 +71,7 @@ const app = express();
     //           res.send(results);
     //       }
     //   })
+    res.send("users page")
   })
 
   
