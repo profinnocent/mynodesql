@@ -75,7 +75,7 @@ const app = express();
 
   
   //Create route to GET or DISPLAY specific customer
-  app.get('/users/:id', (req,res) => {
+  app.get('/user/:id', (req,res) => {
     let sql = `SELECT * FROM customers WHERE id = ${req.params.id}`;
 
     dbconnection.query(sql, (err, result) => {
@@ -83,7 +83,7 @@ const app = express();
             throw err;
         }else{
             console.log(result);
-            res.send('Data for user' + req.params.id + ' successfully read');
+            res.send(result);
         }
     })
 })
