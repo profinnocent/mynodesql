@@ -105,7 +105,7 @@ const app = express();
 
  //Create route to DELETE a specific customer
  app.get('/deleteuser/:id', (req,res) => {
-    let sql = `DELETE FROM customers WHERE id = ${req.params.id}`;
+    let sql = `DELETE FROM customers WHERE 'id' = ${req.params.id}`;
 
     let query = dbconnection.query(sql, (err, result) => {
         if(err){
