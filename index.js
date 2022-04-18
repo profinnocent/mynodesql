@@ -30,25 +30,25 @@ const app = express();
 
 
    //Create customers table
-   app.get('/createtable', (req,res) => {
-    dbconnection.connect((err) => {
-        if (err) throw err;
-        console.log("Connected!");
-        //var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
-        let sql = `CREATE TABLE customers (
-            ID INT(11) NOT NULL AUTO INCREMENT PRIMARY KEY,
-            NAME VARCHAR(50) NOT NULL,
-            EMAIL VARCHAR(50) NOT NULL,
-            PASSWORD VARCHAR(50) NOT NULL,
-            BALANCE INT(11) NOT NULL
-          )`;
-          dbconnection.query(sql, function (err, result) {
-          if (err) throw err;
-          console.log("Table created");
-          res.send("table created...")
-        });
-      });
-})
+//    app.get('/createtable', (req,res) => {
+    // dbconnection.connect((err) => {
+    //     if (err) throw err;
+    //     console.log("Connected!");
+    //     //var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+//         let sql = "CREATE TABLE customers (
+//             ID INT(11) NOT NULL AUTO INCREMENT PRIMARY KEY,
+//             NAME VARCHAR(50) NOT NULL,
+//             EMAIL VARCHAR(50) NOT NULL,
+//             PASSWORD VARCHAR(50) NOT NULL,
+//             BALANCE INT(11) NOT NULL
+//           )";
+//           dbconnection.query(sql, function (err, result) {
+//           if (err) throw err;
+//           console.log("Table created");
+//           res.send("table created...")
+//         });
+//       });
+// })
 
 
     //Create Home page
