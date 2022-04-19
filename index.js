@@ -53,9 +53,9 @@ const app = express();
 
     //Create Home page
     app.get('/', (req,res) => {
-  
+        
                 console.log(res);
-                res.send("This is the Home Page");
+                res.send("This is the Home Page:");
         });
     
 
