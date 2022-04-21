@@ -13,10 +13,10 @@ const app = express();
 //     database : 'mynodesqldb'
 
 //Using online msqlDB
-//     host     : 'https://pdb11.runhosting.com',
-//     user     : '2107412_nodemysql',
-//     password : 'nodeMYsqlpass21',
-//     database : '2107412_nodemysql'
+    // host     : 'https://pdb11.runhosting.com',
+    // user     : '2107412_nodemysql',
+    // password : '',
+    // database : '2107412_nodemysql'
     
     //Mysql ClearDB on Heroku
     host     : 'eu-cdbr-west-02.cleardb.net',
@@ -27,11 +27,11 @@ const app = express();
   });
 
   dbconnection.connect((err) => {
-      if(!err){
-          console.log('Connection ok');
+      if(err){
+        console.log(err);
       }
       else{
-          throw err;
+          console.log('Connection ok');
       }
   });
 
