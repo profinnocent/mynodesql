@@ -28,7 +28,7 @@ const app = express();
 
   dbconnection.connect((err) => {
       if(err){
-        console.log(err);
+        throw err;
       }
       else{
           console.log('Connection ok');
@@ -37,11 +37,15 @@ const app = express();
 
 
     //Create Home page
-    app.get('/', (req,res) => {
-        
-                console.log(res);
-                res.send("This is the Home Page:");
-        });
+    app.get('/', (req,res,err) => {
+
+        if(err){
+            throw err;
+        }else{
+            console.log(res);
+            res.send("This is the Home Page:");
+        }
+    });
     
 
   //Create route to GET or DISPLAY customers
