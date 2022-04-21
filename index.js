@@ -13,16 +13,16 @@ const app = express();
 //     database : 'mynodesqldb'
 
 //Using online msqlDB
-    // host     : 'https://pdb11.runhosting.com',
-    // user     : '2107412_nodemysql',
-    // password : '',
-    // database : '2107412_nodemysql'
+    // host     : "https://pdb11.runhosting.com",
+    // user     : "2107412_nodemysql",
+    // password : "",
+    // database : "2107412_nodemysql"
     
     //Mysql ClearDB on Heroku
-    host     : 'eu-cdbr-west-02.cleardb.net',
-    user     : 'bbeed19b5da297',
-    password : 'acc38556',
-    database : 'heroku_78aa321fdffc1fd'
+    host     : "eu-cdbr-west-02.cleardb.net",
+    user     : "bbeed19b5da297",
+    password : "acc38556",
+    database : "heroku_78aa321fdffc1fd"
     
   });
 
